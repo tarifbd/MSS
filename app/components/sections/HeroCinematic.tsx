@@ -122,6 +122,29 @@ export const HeroCinematic = () => {
                             ))}
                         </div>
                     </motion.div>
+                    {/* Scrolling Sectors Marquee */}
+                    <motion.div
+                        variants={itemVariants}
+                        className="mt-16 w-full overflow-hidden relative"
+                    >
+                        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#020617] to-transparent z-10"></div>
+                        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#020617] to-transparent z-10"></div>
+
+                        <div className="flex animate-marquee whitespace-nowrap gap-12 py-4">
+                            {[1, 2].map((loop) => (
+                                <div key={loop} className="flex gap-12 items-center">
+                                    {["Banking Leaders", "Energy Leaders", "Telecom Leaders", "Textiles Leaders", "Fintech Leaders", "Manufacturing Giants", "Pharma Innovators"].map((sector, idx) => (
+                                        <div key={idx} className="flex items-center gap-3">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.8)]"></div>
+                                            <span className="text-sm md:text-base font-medium text-slate-400/80 hover:text-white transition-colors cursor-default whitespace-nowrap">
+                                                {sector}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
                 </motion.div>
             </Container>
         </section>
