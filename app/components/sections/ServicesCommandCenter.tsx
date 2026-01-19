@@ -51,7 +51,7 @@ export const ServicesCommandCenter = () => {
     ];
 
     return (
-        <section ref={ref} className={`py-20 md:py-32 bg-[#020617] relative transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} id="services">
+        <section ref={ref} className={`pt-20 md:pt-32 pb-10 md:pb-12 bg-[#020617] relative transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} id="services">
             <Container>
                 <div className="text-center mb-16 md:mb-24">
                     <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight">

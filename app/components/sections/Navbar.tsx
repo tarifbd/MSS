@@ -24,18 +24,18 @@ export const Navbar = () => {
         <>
             <header
                 className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${scrolled
-                        ? 'glass-panel-dark py-2 md:py-3 border-white/5'
-                        : 'bg-transparent py-4 md:py-6 border-transparent'
+                    ? 'glass-panel-dark py-2 md:py-3 border-white/5'
+                    : 'bg-transparent py-4 md:py-6 border-transparent'
                     }`}
             >
                 <Container>
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                             <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center rounded-lg shadow-lg shadow-indigo-500/30">
-                                <span className="text-white font-serif font-bold text-xl md:text-2xl">K</span>
+                                <span className="text-white font-serif font-bold text-xl md:text-2xl">M</span>
                             </div>
                             <span className="font-serif font-bold text-lg md:text-xl tracking-tight text-white/90">
-                                KMKH & Co.
+                                M. S. Salekin & Co
                             </span>
                         </div>
 

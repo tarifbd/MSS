@@ -1,7 +1,7 @@
 import { FileText, PieChart, Lightbulb, Headphones } from 'lucide-react';
 
 export const SITE_CONFIG = {
-    firmName: "K M Khadimul Hasan & Co.",
+    firmName: "M. S. Salekin & Co",
     regNumbers: { frc: "FRC-2024-001-X", icab: "ICAB-MEM-1234" },
 };
 

@@ -25,7 +25,7 @@ export const Footer = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="col-span-1 md:col-span-2">
-                        <span className="text-3xl font-serif font-bold text-white block mb-8">KMKH & Co.</span>
+                        <span className="text-3xl font-serif font-bold text-white block mb-8">M. S. Salekin & Co.</span>
                         <p className="max-w-xs leading-relaxed mb-8 text-base font-light text-slate-400">
                             The premier audit and advisory firm for the modern enterprise. Defining the standard of financial clarity in Bangladesh.
                         </p>
@@ -84,7 +84,7 @@ export const Footer = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
                 >
-                    <p>&copy; {new Date().getFullYear()} K M Khadimul Hasan & Co. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} M. S. Salekin & Co. All rights reserved.</p>
                     <div className="flex flex-col md:flex-row gap-4 mt-4 md:mt-0">
                         <span className="px-3 py-1 bg-white/5 rounded-full border border-white/10">FRC: {SITE_CONFIG.regNumbers.frc}</span>
                         <span className="px-3 py-1 bg-white/5 rounded-full border border-white/10">ICAB: {SITE_CONFIG.regNumbers.icab}</span>

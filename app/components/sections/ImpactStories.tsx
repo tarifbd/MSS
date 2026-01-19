@@ -56,7 +56,7 @@ export const ImpactStories = () => {
     };
 
     return (
-        <section className="py-20 md:py-32 bg-[#020617] border-t border-white/5 relative overflow-hidden">
+        <section className="pt-10 md:pt-12 pb-20 md:pb-32 bg-[#020617] border-t border-white/5 relative overflow-hidden">
             <Container>
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <motion.div
