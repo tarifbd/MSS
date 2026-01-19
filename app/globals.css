@@ -261,6 +261,7 @@ body {
 .text-gradient-indigo {
   background: linear-gradient(135deg, #E0E7FF 0%, #818CF8 50%, #C084FC 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 30px rgba(129, 140, 248, 0.3);
 }
