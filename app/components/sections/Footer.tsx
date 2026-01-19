@@ -3,6 +3,7 @@
 import React from 'react';
 import { Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
 import { Container } from '../ui/atoms';
+import { motion } from 'framer-motion';
 import { SITE_CONFIG } from '@/app/config';
 
 export const Footer = () => {
@@ -16,7 +17,13 @@ export const Footer = () => {
     return (
         <footer className="bg-[#020617] py-20 border-t border-white/5 text-slate-400">
             <Container>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
                     <div className="col-span-1 md:col-span-2">
                         <span className="text-3xl font-serif font-bold text-white block mb-8">KMKH & Co.</span>
                         <p className="max-w-xs leading-relaxed mb-8 text-base font-light text-slate-400">
@@ -25,44 +32,64 @@ export const Footer = () => {
 
                         <div className="flex gap-4">
                             {socialLinks.map((social, i) => (
-                                <a
+                                <motion.a
                                     key={i}
                                     href={social.href}
                                     aria-label={social.label}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2 + i * 0.1 }}
                                     className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-300 cursor-pointer border border-white/10 hover:border-indigo-500 hover:scale-110 hover:shadow-[0_0_15px_rgba(99,102,241,0.5)]"
                                 >
                                     {social.icon}
-                                </a>
+                                </motion.a>
                             ))}
                         </div>
                     </div>
 
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 }}
+                    >
                         <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8 text-indigo-400">Services</h4>
                         <ul className="space-y-4 text-sm">
                             {['Statutory Audit', 'Tax Optimization', 'Advisory', 'Forensic Analysis'].map(item => (
                                 <li key={item}><a href="#" className="hover:text-indigo-300 hover:translate-x-1 transition-all inline-block">{item}</a></li>
                             ))}
                         </ul>
-                    </div>
+                    </motion.div>
 
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                    >
                         <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8 text-indigo-400">Legal</h4>
                         <ul className="space-y-4 text-sm">
                             {['Privacy Policy', 'Terms of Engagement', 'Disclaimer', 'Client Portal'].map(item => (
                                 <li key={item}><a href="#" className="hover:text-indigo-300 hover:translate-x-1 transition-all inline-block">{item}</a></li>
                             ))}
                         </ul>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4 md:gap-0 font-medium">
+                <motion.div
+                    className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4 md:gap-0 font-medium"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                >
                     <p>&copy; {new Date().getFullYear()} K M Khadimul Hasan & Co. All rights reserved.</p>
                     <div className="flex flex-col md:flex-row gap-4 mt-4 md:mt-0">
                         <span className="px-3 py-1 bg-white/5 rounded-full border border-white/10">FRC: {SITE_CONFIG.regNumbers.frc}</span>
                         <span className="px-3 py-1 bg-white/5 rounded-full border border-white/10">ICAB: {SITE_CONFIG.regNumbers.icab}</span>
                     </div>
-                </div>
+                </motion.div>
             </Container>
         </footer>
     );

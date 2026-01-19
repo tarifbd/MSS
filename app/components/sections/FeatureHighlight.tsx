@@ -3,19 +3,23 @@
 import React from 'react';
 import { Check, Activity } from 'lucide-react';
 import { Container, Button } from '../ui/atoms';
+import { motion } from 'framer-motion';
 import { useScrollReveal } from '../hooks';
 
 export const FeatureHighlight = () => {
-    const [ref, isVisible] = useScrollReveal(0.1);
-
     return (
-        <section ref={ref} className={`py-20 md:py-32 bg-[#020617] overflow-hidden relative transition-all duration-1000 ${isVisible ? 'opacity-100 animate-slide-in-left' : 'opacity-0'}`}>
+        <section className="py-20 md:py-32 bg-[#020617] overflow-hidden relative">
             {/* Dark Angled Background */}
             <div className="absolute top-0 right-0 w-2/3 h-full bg-[#0a1025] transform skew-x-12 translate-x-48 z-0"></div>
 
             <Container className="relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
                         <div className="inline-block px-4 py-1 rounded-full bg-indigo-500/10 text-indigo-300 font-bold text-xs uppercase tracking-widest mb-8 border border-indigo-500/20">
                             Audit 2.0
                         </div>
@@ -33,7 +37,14 @@ export const FeatureHighlight = () => {
                                 { t: 'Real-Time Regulatory Monitoring', d: 'Automated alerts for SRO changes.' },
                                 { t: 'Tech-Enabled Audit Workflow', d: 'Paperless, secure, and transparent.' }
                             ].map((item, i) => (
-                                <li key={i} className="flex gap-5">
+                                <motion.li
+                                    key={i}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2 + i * 0.1 }}
+                                    className="flex gap-5"
+                                >
                                     <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-white">
                                         <Check size={14} strokeWidth={3} />
                                     </div>
@@ -41,14 +52,20 @@ export const FeatureHighlight = () => {
                                         <h4 className="text-white font-bold text-lg">{item.t}</h4>
                                         <p className="text-slate-500 text-sm mt-1">{item.d}</p>
                                     </div>
-                                </li>
+                                </motion.li>
                             ))}
                         </ul>
 
                         <Button variant="primary" className="rounded-full h-14 w-full sm:w-auto shadow-lg shadow-indigo-900/50">Verify Our Credentials</Button>
-                    </div>
+                    </motion.div>
 
-                    <div className="relative mt-12 lg:mt-0">
+                    <motion.div
+                        className="relative mt-12 lg:mt-0"
+                        initial={{ opacity: 0, rotateY: -20, x: 30 }}
+                        whileInView={{ opacity: 1, rotateY: 0, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
                         <div className="glass-panel p-8 md:p-12 rounded-3xl border border-white/10 relative transform rotate-0 lg:rotate-2 transition-all hover:rotate-0 hover:scale-[1.02] bg-[#020617]/40 backdrop-blur-xl">
                             <div className="flex justify-between items-center mb-10 border-b border-indigo-500/20 pb-8">
                                 <div>
@@ -68,9 +85,15 @@ export const FeatureHighlight = () => {
                                             <span className="text-white">{val}%</span>
                                         </div>
                                         <div className="h-2.5 bg-white/5 rounded-full overflow-hidden">
-                                            <div className="h-full bg-gradient-to-r from-indigo-500 to-violet-500 relative" style={{ width: `${val}%` }}>
+                                            <motion.div
+                                                className="h-full bg-gradient-to-r from-indigo-500 to-violet-500 relative"
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: `${val}%` }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 1, delay: 0.5 + i * 0.2, ease: "easeOut" }}
+                                            >
                                                 <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-                                            </div>
+                                            </motion.div>
                                         </div>
                                     </div>
                                 ))}
@@ -86,7 +109,7 @@ export const FeatureHighlight = () => {
                         </div>
 
                         <div className="absolute inset-0 bg-indigo-600 blur-[120px] opacity-20 -z-10"></div>
-                    </div>
+                    </motion.div>
                 </div>
             </Container>
         </section>

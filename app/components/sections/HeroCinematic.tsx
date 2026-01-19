@@ -2,10 +2,35 @@
 
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Container, Button } from '../ui/atoms';
 
 export const HeroCinematic = () => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring" as const,
+                stiffness: 100,
+                damping: 20
+            }
+        }
+    };
 
     const handleMouseMove = (e: React.MouseEvent) => {
         // Subtle parallax effect
@@ -33,37 +58,56 @@ export const HeroCinematic = () => {
             ></div>
 
             <Container className="relative z-10">
-                <div className="flex flex-col items-center text-center">
-
+                <motion.div
+                    className="flex flex-col items-center text-center"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
                     {/* Status Badge */}
-                    <div className="reveal-hidden animate-slide-up flex items-center gap-2 px-4 py-1.5 rounded-full glass-morphism text-indigo-300 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-10 hover:bg-white/10 transition-colors duration-300 cursor-default border-indigo-500/20">
+                    <motion.div
+                        variants={itemVariants}
+                        className="flex items-center gap-2 px-4 py-1.5 rounded-full glass-morphism text-indigo-300 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-10 hover:bg-white/10 transition-colors duration-300 cursor-default border-indigo-500/20"
+                    >
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                         </span>
                         System Operational • Global Compliance Active
-                    </div>
+                    </motion.div>
 
-                    <h1 className="reveal-hidden animate-slide-up text-5xl md:text-8xl font-serif font-bold text-white mb-8 leading-[1.1] md:leading-[0.95] tracking-tight max-w-5xl mx-auto" style={{ animationDelay: '0.1s' }}>
+                    <motion.h1
+                        variants={itemVariants}
+                        className="text-5xl md:text-8xl font-serif font-bold text-white mb-8 leading-[1.1] md:leading-[0.95] tracking-tight max-w-5xl mx-auto"
+                    >
                         Accelerate Your <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-indigo-200 to-indigo-500">Financial Clarity.</span>
-                    </h1>
+                    </motion.h1>
 
-                    <p className="reveal-hidden animate-slide-up text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed font-light tracking-wide" style={{ animationDelay: '0.2s' }}>
+                    <motion.p
+                        variants={itemVariants}
+                        className="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed font-light tracking-wide"
+                    >
                         We merge Big-4 rigor with modern agility. Transform your compliance from a burden into a strategic growth engine.
-                    </p>
+                    </motion.p>
 
-                    <div className="reveal-hidden animate-slide-up flex flex-col w-full sm:w-auto sm:flex-row gap-4 sm:gap-6 px-4 md:px-0" style={{ animationDelay: '0.3s' }}>
+                    <motion.div
+                        variants={itemVariants}
+                        className="flex flex-col w-full sm:w-auto sm:flex-row gap-4 sm:gap-6 px-4 md:px-0"
+                    >
                         <Button variant="glow" className="w-full sm:min-w-[220px] rounded-full h-14 text-sm tracking-widest">
                             Start Your Audit <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                         <Button variant="outline" className="w-full sm:min-w-[220px] rounded-full h-14 text-sm tracking-widest">
                             Explore Services
                         </Button>
-                    </div>
+                    </motion.div>
 
                     {/* Stats Bar */}
-                    <div className="reveal-hidden animate-slide-up mt-24 md:mt-32 w-full max-w-5xl" style={{ animationDelay: '0.5s' }}>
+                    <motion.div
+                        variants={itemVariants}
+                        className="mt-24 md:mt-32 w-full max-w-5xl"
+                    >
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-0 md:divide-x divide-white/5 glass-morphism rounded-3xl p-8 border border-white/5 bg-[#0A0F1E]/50">
                             {[
                                 { label: "MNCs Served", val: "50+" },
@@ -77,8 +121,8 @@ export const HeroCinematic = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </Container>
         </section>
     );

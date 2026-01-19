@@ -3,21 +3,31 @@
 import React from 'react';
 import { Code, Server, Layers, Activity, Smartphone } from 'lucide-react';
 import { Container } from '../ui/atoms';
+import { motion } from 'framer-motion';
 import { useScrollReveal } from '../hooks';
 
 export const InnovationHub = () => {
-    const [ref, isVisible] = useScrollReveal(0.1);
-
     return (
-        <section ref={ref} className={`py-20 md:py-32 bg-[#0f172a] relative transition-all duration-1000 ${isVisible ? 'opacity-100 animate-blur-in' : 'opacity-0'}`}>
+        <section className="py-20 md:py-32 bg-[#0f172a] relative">
             <div className="absolute inset-0 bg-noise opacity-20"></div>
 
             <Container className="relative z-10">
-                <div className="bg-gradient-to-br from-indigo-900/50 to-violet-900/50 rounded-3xl p-8 md:p-20 border border-white/10 overflow-hidden relative">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="bg-gradient-to-br from-indigo-900/50 to-violet-900/50 rounded-3xl p-8 md:p-20 border border-white/10 overflow-hidden relative"
+                >
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/30 rounded-full blur-[120px] animate-pulse-glow"></div>
 
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <div>
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-bold border border-cyan-500/20 mb-6">
                                 <Code size={14} /> Digital Transformation
                             </div>
@@ -35,15 +45,28 @@ export const InnovationHub = () => {
                                     { icon: Activity, label: "Predictive Risk AI" },
                                     { icon: Smartphone, label: "Paperless Portal" }
                                 ].map((tech, i) => (
-                                    <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-black/20 border border-white/5 backdrop-blur-sm">
+                                    <motion.div
+                                        key={i}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.4 + i * 0.1 }}
+                                        className="flex items-center gap-3 p-4 rounded-xl bg-black/20 border border-white/5 backdrop-blur-sm"
+                                    >
                                         <tech.icon className="text-cyan-400 w-5 h-5" />
                                         <span className="text-sm font-bold text-white">{tech.label}</span>
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="relative">
+                        <motion.div
+                            className="relative"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                        >
                             <div className="aspect-square rounded-2xl bg-black/40 border border-white/10 p-6 relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 opacity-50"></div>
 
@@ -61,9 +84,9 @@ export const InnovationHub = () => {
                                     System Active
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
             </Container>
         </section>
     );

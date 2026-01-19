@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import { Container, Button } from '../ui/atoms';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollReveal } from '../hooks';
 import { IconAudit, IconTax, IconAdvisory, IconBPO } from '../ui/icons';
 
@@ -69,8 +70,8 @@ export const ServicesCommandCenter = () => {
                                 key={s.id}
                                 onClick={() => setActiveTab(s.id)}
                                 className={`text-left p-5 rounded-2xl transition-all duration-500 group relative overflow-hidden border flex flex-col items-start ${activeTab === s.id
-                                        ? 'bg-indigo-900/20 border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)] scale-[1.02]'
-                                        : 'bg-white/5 border-transparent hover:bg-white/10 hover:border-white/10 text-slate-500'
+                                    ? 'bg-indigo-900/20 border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)] scale-[1.02]'
+                                    : 'bg-white/5 border-transparent hover:bg-white/10 hover:border-white/10 text-slate-500'
                                     }`}
                             >
                                 <div className="relative z-10 w-full">
@@ -94,53 +95,68 @@ export const ServicesCommandCenter = () => {
 
                     {/* Display (Card) */}
                     <div className="lg:col-span-8">
-                        {services.map((s) => (
-                            activeTab === s.id && (
-                                <div key={s.id} className="h-full glass-morphism rounded-[2rem] p-8 md:p-12 relative overflow-hidden animate-fade-scale bg-[#0A0F1E]/80">
-                                    <div className="relative z-10">
-                                        <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
-                                            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl">
-                                                {s.icon}
-                                            </div>
-                                            <div className="flex-1">
-                                                <div className="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-[10px] font-bold uppercase tracking-wider mb-4 border border-indigo-500/20">
-                                                    {s.category} Capability
+                        <AnimatePresence mode="wait">
+                            {services.map((s) => (
+                                activeTab === s.id && (
+                                    <motion.div
+                                        key={s.id}
+                                        initial={{ opacity: 0, x: 20, scale: 0.98 }}
+                                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                                        exit={{ opacity: 0, x: -20, scale: 0.98 }}
+                                        transition={{ duration: 0.4, ease: "easeOut" }}
+                                        className="h-full glass-morphism rounded-[2rem] p-8 md:p-12 relative overflow-hidden bg-[#0A0F1E]/80"
+                                    >
+                                        <div className="relative z-10">
+                                            <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
+                                                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl">
+                                                    {s.icon}
                                                 </div>
-                                                <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 tracking-tight">
-                                                    {s.title}
-                                                </h3>
-                                                <p className="text-slate-300 text-lg leading-relaxed max-w-xl font-light">
-                                                    {s.desc}
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                                            {s.features.map((feature, i) => (
-                                                <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-indigo-500/30 transition-colors group cursor-default">
-                                                    <div className="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center text-white flex-shrink-0 shadow-[0_0_10px_#6366F1]">
-                                                        <Check size={10} strokeWidth={4} />
+                                                <div className="flex-1">
+                                                    <div className="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-[10px] font-bold uppercase tracking-wider mb-4 border border-indigo-500/20">
+                                                        {s.category} Capability
                                                     </div>
-                                                    <span className="font-medium text-slate-300 text-sm">{feature}</span>
+                                                    <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 tracking-tight">
+                                                        {s.title}
+                                                    </h3>
+                                                    <p className="text-slate-300 text-lg leading-relaxed max-w-xl font-light">
+                                                        {s.desc}
+                                                    </p>
                                                 </div>
-                                            ))}
+                                            </div>
+
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                                                {s.features.map((feature, i) => (
+                                                    <motion.div
+                                                        key={i}
+                                                        initial={{ opacity: 0, y: 10 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        transition={{ delay: 0.2 + i * 0.05 }}
+                                                        className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-indigo-500/30 transition-colors group cursor-default"
+                                                    >
+                                                        <div className="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center text-white flex-shrink-0 shadow-[0_0_10px_#6366F1]">
+                                                            <Check size={10} strokeWidth={4} />
+                                                        </div>
+                                                        <span className="font-medium text-slate-300 text-sm">{feature}</span>
+                                                    </motion.div>
+                                                ))}
+                                            </div>
+
+                                            <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-white/10">
+                                                <Button variant="primary" className="rounded-full w-full sm:w-auto h-12 shadow-lg shadow-indigo-500/20">
+                                                    Explore {s.category}
+                                                </Button>
+                                                <button className="px-8 py-3 rounded-full border border-white/20 text-slate-300 font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-indigo-950 transition-all w-full sm:w-auto h-12">
+                                                    Download Brochure
+                                                </button>
+                                            </div>
                                         </div>
 
-                                        <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-white/10">
-                                            <Button variant="primary" className="rounded-full w-full sm:w-auto h-12 shadow-lg shadow-indigo-500/20">
-                                                Explore {s.category}
-                                            </Button>
-                                            <button className="px-8 py-3 rounded-full border border-white/20 text-slate-300 font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-indigo-950 transition-all w-full sm:w-auto h-12">
-                                                Download Brochure
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    {/* Atmospheric Glow */}
-                                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
-                                </div>
-                            )
-                        ))}
+                                        {/* Atmospheric Glow */}
+                                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+                                    </motion.div>
+                                )
+                            ))}
+                        </AnimatePresence>
                     </div>
                 </div>
             </Container>
