@@ -25,12 +25,12 @@ export const Footer = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="col-span-1 md:col-span-2">
-                        <span className="text-3xl font-serif font-bold text-white block mb-8">M. S. Salekin & Co.</span>
-                        <p className="max-w-xs leading-relaxed mb-8 text-base font-light text-slate-400">
+                        <span className="text-2xl md:text-3xl font-serif font-bold text-white block mb-6 md:mb-8 text-center md:text-left">M. S. Salekin & Co.</span>
+                        <p className="max-w-xs leading-relaxed mb-8 text-sm md:text-base font-light text-slate-400 mx-auto md:mx-0 text-center md:text-left">
                             The premier audit and advisory firm for the modern enterprise. Defining the standard of financial clarity in Bangladesh.
                         </p>
 
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 justify-center md:justify-start">
                             {socialLinks.map((social, i) => (
                                 <motion.a
                                     key={i}
@@ -40,7 +40,7 @@ export const Footer = () => {
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.2 + i * 0.1 }}
-                                    className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-300 cursor-pointer border border-white/10 hover:border-indigo-500 hover:scale-110 hover:shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+                                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-indigo-600 hover:text-white transition-all duration-300 cursor-pointer border border-white/10 hover:border-indigo-500 hover:scale-110 hover:shadow-[0_0_15px_rgba(99,102,241,0.5)]"
                                 >
                                     {social.icon}
                                 </motion.a>
@@ -49,13 +49,14 @@ export const Footer = () => {
                     </div>
 
                     <motion.div
+                        className="text-center md:text-left"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
                     >
-                        <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8 text-indigo-400">Services</h4>
-                        <ul className="space-y-4 text-sm">
+                        <h4 className="text-white font-bold uppercase tracking-widest text-[10px] md:text-xs mb-6 md:mb-8 text-indigo-400">Services</h4>
+                        <ul className="space-y-3 md:space-y-4 text-xs md:text-sm">
                             {['Statutory Audit', 'Tax Optimization', 'Advisory', 'Forensic Analysis'].map(item => (
                                 <li key={item}><a href="#" className="hover:text-indigo-300 hover:translate-x-1 transition-all inline-block">{item}</a></li>
                             ))}
@@ -63,13 +64,14 @@ export const Footer = () => {
                     </motion.div>
 
                     <motion.div
+                        className="text-center md:text-left"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
                     >
-                        <h4 className="text-white font-bold uppercase tracking-widest text-xs mb-8 text-indigo-400">Legal</h4>
-                        <ul className="space-y-4 text-sm">
+                        <h4 className="text-white font-bold uppercase tracking-widest text-[10px] md:text-xs mb-6 md:mb-8 text-indigo-400">Legal</h4>
+                        <ul className="space-y-3 md:space-y-4 text-xs md:text-sm">
                             {['Privacy Policy', 'Terms of Engagement', 'Disclaimer', 'Client Portal'].map(item => (
                                 <li key={item}><a href="#" className="hover:text-indigo-300 hover:translate-x-1 transition-all inline-block">{item}</a></li>
                             ))}

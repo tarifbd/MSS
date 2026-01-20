@@ -53,11 +53,11 @@ export const ServicesCommandCenter = () => {
     return (
         <section ref={ref} className={`pt-20 md:pt-32 pb-10 md:pb-12 bg-[#020617] relative transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} id="services">
             <Container>
-                <div className="text-center mb-16 md:mb-24">
-                    <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 tracking-tight">
+                <div className="text-center mb-12 md:mb-24">
+                    <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-4 md:mb-6 tracking-tight">
                         Precision Meets <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">Performance.</span>
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto text-lg md:text-xl font-light">
+                    <p className="text-slate-400 max-w-2xl mx-auto text-base md:text-xl font-light px-4">
                         Select a specialized practice area to explore our capabilities.
                     </p>
                 </div>
@@ -69,19 +69,19 @@ export const ServicesCommandCenter = () => {
                             <button
                                 key={s.id}
                                 onClick={() => setActiveTab(s.id)}
-                                className={`text-left p-5 rounded-2xl transition-all duration-500 group relative overflow-hidden border flex flex-col items-start ${activeTab === s.id
+                                className={`text-left p-4 md:p-5 rounded-2xl transition-all duration-500 group relative overflow-hidden border flex flex-col items-start ${activeTab === s.id
                                     ? 'bg-indigo-900/20 border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.15)] scale-[1.02]'
                                     : 'bg-white/5 border-transparent hover:bg-white/10 hover:border-white/10 text-slate-500'
                                     }`}
                             >
                                 <div className="relative z-10 w-full">
                                     <div className="flex justify-between items-start mb-2">
-                                        <span className={`text-xs font-bold uppercase tracking-wider ${activeTab === s.id ? 'text-indigo-400' : 'text-slate-500'}`}>
+                                        <span className={`text-[10px] md:text-xs font-bold uppercase tracking-wider ${activeTab === s.id ? 'text-indigo-400' : 'text-slate-500'}`}>
                                             0{s.id + 1}
                                         </span>
-                                        {activeTab === s.id && <div className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></div>}
+                                        {activeTab === s.id && <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-indigo-400 animate-pulse"></div>}
                                     </div>
-                                    <span className={`block text-lg md:text-xl font-bold ${activeTab === s.id ? 'text-white' : 'text-slate-400 group-hover:text-white'}`}>
+                                    <span className={`block text-sm md:text-xl font-bold ${activeTab === s.id ? 'text-white' : 'text-slate-400 group-hover:text-white'}`}>
                                         <span className="lg:hidden">{s.shortTitle}</span>
                                         <span className="hidden lg:inline">{s.title}</span>
                                     </span>
@@ -104,21 +104,21 @@ export const ServicesCommandCenter = () => {
                                         animate={{ opacity: 1, x: 0, scale: 1 }}
                                         exit={{ opacity: 0, x: -20, scale: 0.98 }}
                                         transition={{ duration: 0.4, ease: "easeOut" }}
-                                        className="h-full glass-morphism rounded-[2rem] p-8 md:p-12 relative overflow-hidden bg-[#0A0F1E]/80"
+                                        className="h-full glass-morphism rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-12 relative overflow-hidden bg-[#0A0F1E]/80"
                                     >
                                         <div className="relative z-10">
-                                            <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
-                                                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 shadow-xl">
+                                            <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start mb-8 md:mb-10">
+                                                <div className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/10 shadow-xl">
                                                     {s.icon}
                                                 </div>
                                                 <div className="flex-1">
-                                                    <div className="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-[10px] font-bold uppercase tracking-wider mb-4 border border-indigo-500/20">
+                                                    <div className="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-[9px] md:text-[10px] font-bold uppercase tracking-wider mb-3 md:mb-4 border border-indigo-500/20">
                                                         {s.category} Capability
                                                     </div>
-                                                    <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 tracking-tight">
+                                                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-white mb-4 md:mb-6 tracking-tight">
                                                         {s.title}
                                                     </h3>
-                                                    <p className="text-slate-300 text-lg leading-relaxed max-w-xl font-light">
+                                                    <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-xl font-light">
                                                         {s.desc}
                                                     </p>
                                                 </div>

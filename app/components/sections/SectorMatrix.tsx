@@ -49,15 +49,15 @@ export const SectorMatrix = () => {
                 >
                     {sectors.map((s, i) => (
                         <motion.div key={i} variants={itemVariants}>
-                            <SpotlightCard className="group p-8 cursor-pointer h-full">
-                                <div className={`mb-6 p-3 rounded-xl bg-white/5 w-fit group-hover:scale-110 transition-transform duration-500 border border-white/5 ${s.color}`}>
+                            <SpotlightCard className="group p-6 md:p-8 cursor-pointer h-full">
+                                <div className={`mb-4 md:mb-6 p-2.5 md:p-3 rounded-xl bg-white/5 w-fit group-hover:scale-110 transition-transform duration-500 border border-white/5 ${s.color}`}>
                                     {s.icon}
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-2">{s.title}</h3>
-                                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                                <h3 className="text-lg md:text-xl font-bold text-white mb-2">{s.title}</h3>
+                                <p className="text-xs md:text-sm text-slate-400 leading-relaxed mb-6">
                                     Tailored compliance frameworks.
                                 </p>
-                                <div className="mt-auto flex items-center text-xs font-bold text-indigo-400 opacity-60 group-hover:opacity-100 transition-opacity group-hover:translate-x-2 duration-300">
+                                <div className="mt-auto flex items-center text-[10px] md:text-xs font-bold text-indigo-400 opacity-60 group-hover:opacity-100 transition-opacity group-hover:translate-x-2 duration-300">
                                     View Case Studies <ArrowRight className="ml-2 w-3 h-3" />
                                 </div>
                             </SpotlightCard>

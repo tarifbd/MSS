@@ -17,10 +17,10 @@ export const IntelligenceFeed = () => {
                     viewport={{ once: true }}
                 >
                     <div>
-                        <div className="text-indigo-400 font-bold text-xs uppercase tracking-widest mb-4">Market Intelligence</div>
-                        <h2 className="text-4xl md:text-5xl font-serif text-white">Critical Updates</h2>
+                        <div className="text-indigo-400 font-bold text-[10px] md:text-xs uppercase tracking-widest mb-3 md:mb-4">Market Intelligence</div>
+                        <h2 className="text-3xl md:text-5xl font-serif text-white">Critical Updates</h2>
                     </div>
-                    <a href="#" className="group flex items-center text-sm font-bold text-white hover:text-indigo-400 transition-colors bg-white/5 px-6 py-3 rounded-full hover:bg-white/10">
+                    <a href="#" className="group flex items-center text-xs md:text-sm font-bold text-white hover:text-indigo-400 transition-colors bg-white/5 px-5 md:px-6 py-2.5 md:py-3 rounded-full hover:bg-white/10">
                         View All Analysis <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
                 </motion.div>
@@ -52,17 +52,17 @@ export const IntelligenceFeed = () => {
                                 visible: { opacity: 1, y: 0, rotateX: 0 }
                             }}
                         >
-                            <SpotlightCard className="group p-8 cursor-pointer h-full">
+                            <SpotlightCard className="group p-6 md:p-8 cursor-pointer h-full">
                                 <div className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                                 <div className="relative z-10 flex flex-col h-full">
                                     <div className="flex justify-between items-center mb-6">
-                                        <span className="px-3 py-1 bg-white/5 border border-white/10 text-indigo-200 text-xs font-bold rounded-full uppercase tracking-wider">{item.tag}</span>
-                                        <span className="text-slate-500 text-xs font-mono">{item.date}</span>
+                                        <span className="px-3 py-1 bg-white/5 border border-white/10 text-indigo-200 text-[10px] md:text-xs font-bold rounded-full uppercase tracking-wider">{item.tag}</span>
+                                        <span className="text-slate-500 text-[10px] md:text-xs font-mono">{item.date}</span>
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-6 group-hover:text-indigo-300 transition-colors leading-snug">
+                                    <h3 className="text-lg md:text-xl font-bold text-white mb-6 group-hover:text-indigo-300 transition-colors leading-snug">
                                         {item.title}
                                     </h3>
-                                    <div className="mt-auto flex items-center text-sm font-bold text-slate-400 group-hover:text-white transition-colors">
+                                    <div className="mt-auto flex items-center text-xs md:text-sm font-bold text-slate-400 group-hover:text-white transition-colors">
                                         Read Analysis <ArrowRight className="ml-2 w-4 h-4" />
                                     </div>
                                 </div>

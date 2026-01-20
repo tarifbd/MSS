@@ -88,7 +88,7 @@ export const ImpactStories = () => {
                         <motion.div
                             key={i}
                             variants={itemVariants}
-                            className="snap-center flex-shrink-0 w-[85vw] md:w-[400px] lg:w-auto glass-panel p-8 rounded-2xl border border-white/5 hover:border-indigo-500/30 transition-all duration-300 group"
+                            className="snap-center flex-shrink-0 w-[85vw] md:w-[400px] lg:w-auto glass-panel p-6 md:p-8 rounded-2xl border border-white/5 hover:border-indigo-500/30 transition-all duration-300 group"
                         >
                             <div className="flex justify-between items-start mb-8">
                                 <Quote className="text-indigo-500 w-8 h-8 opacity-50" />
@@ -97,7 +97,7 @@ export const ImpactStories = () => {
                                 </span>
                             </div>
 
-                            <h3 className="text-xl font-bold text-white mb-4 group-hover:text-indigo-300 transition-colors">
+                            <h3 className="text-lg md:text-xl font-bold text-white mb-4 group-hover:text-indigo-300 transition-colors">
                                 {item.client}
                             </h3>
 
@@ -113,7 +113,7 @@ export const ImpactStories = () => {
                             </div>
 
                             <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                                <span className="text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
+                                <span className="text-2xl md:text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
                                     {item.stat}
                                 </span>
                                 <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-indigo-600 transition-colors">

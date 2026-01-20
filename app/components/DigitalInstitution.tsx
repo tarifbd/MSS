@@ -21,12 +21,12 @@ export default function DigitalInstitution() {
     useMousePosition(); // Activate global mouse tracking
 
     return (
-        <div className="min-h-screen font-sans selection:bg-indigo-500 selection:text-white bg-[#020617] text-slate-300">
+        <div className="min-h-screen font-sans selection:bg-indigo-500 selection:text-white bg-[#020617] text-slate-300 overflow-x-hidden">
             {/* The Quantum Field - Mouse Follower */}
             <div className="quantum-field"></div>
 
             <Navbar />
-            <main>
+            <main className="overflow-x-hidden">
                 <HeroCinematic />
                 <ServicesCommandCenter />
                 <ImpactStories />

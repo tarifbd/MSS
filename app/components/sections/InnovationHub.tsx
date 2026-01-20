@@ -17,7 +17,7 @@ export const InnovationHub = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="bg-gradient-to-br from-indigo-900/50 to-violet-900/50 rounded-3xl p-8 md:p-20 border border-white/10 overflow-hidden relative"
+                    className="bg-gradient-to-br from-indigo-900/50 to-violet-900/50 rounded-3xl p-6 md:p-20 border border-white/10 overflow-hidden relative"
                 >
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/30 rounded-full blur-[120px] animate-pulse-glow"></div>
 
@@ -31,10 +31,10 @@ export const InnovationHub = () => {
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-bold border border-cyan-500/20 mb-6">
                                 <Code size={14} /> Digital Transformation
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
+                            <h2 className="text-2xl md:text-5xl font-serif font-bold text-white mb-4 md:mb-6">
                                 Audit at the Speed of Data.
                             </h2>
-                            <p className="text-indigo-200 text-lg mb-8 leading-relaxed">
+                            <p className="text-indigo-200 text-base md:text-lg mb-8 leading-relaxed font-light">
                                 We leverage proprietary AI tools and data analytics to move beyond sampling. Our digital audit suite analyzes 100% of transactions for anomalies, delivering absolute assurance.
                             </p>
 

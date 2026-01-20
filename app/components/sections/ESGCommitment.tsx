@@ -52,10 +52,10 @@ export const ESGCommitment = () => {
                                 hidden: { opacity: 0, y: 20 },
                                 visible: { opacity: 1, y: 0 }
                             }}
-                            className="group p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1"
+                            className="group p-6 md:p-8 rounded-2xl bg-white border border-slate-200 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1"
                         >
-                            <div className={`w-12 h-1 rounded-full ${item.color} mb-6`}></div>
-                            <h3 className="text-xl font-bold text-[#0f172a] mb-4">{item.title}</h3>
+                            <div className={`w-12 h-1 rounded-full ${item.color} mb-4 md:mb-6`}></div>
+                            <h3 className="text-lg md:text-xl font-bold text-[#0f172a] mb-3 md:mb-4">{item.title}</h3>
                             <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
                         </motion.div>
                     ))}

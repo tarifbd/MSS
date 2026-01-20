@@ -12,11 +12,11 @@ export const TalentPortal = () => {
 
             <Container className="relative z-10">
                 <motion.div
-                    className="flex flex-col lg:flex-row items-center justify-between gap-16 text-center lg:text-left p-8 md:p-16 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm"
+                    className="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16 text-center lg:text-left p-6 md:p-16 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm"
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 >
                     <div className="max-w-2xl">
                         <motion.h2
@@ -24,7 +24,7 @@ export const TalentPortal = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
+                            className="text-3xl md:text-5xl font-serif font-bold text-white mb-4 md:mb-6"
                         >
                             Join the Elite.
                         </motion.h2>

@@ -30,11 +30,11 @@ export const Navbar = () => {
             >
                 <Container>
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center rounded-lg shadow-lg shadow-indigo-500/30">
-                                <span className="text-white font-serif font-bold text-xl md:text-2xl">M</span>
+                        <div className="flex items-center gap-2 md:gap-3">
+                            <div className="w-7 h-7 md:w-10 md:h-10 bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center rounded-lg shadow-lg shadow-indigo-500/30">
+                                <span className="text-white font-serif font-bold text-lg md:text-2xl">M</span>
                             </div>
-                            <span className="font-serif font-bold text-lg md:text-xl tracking-tight text-white/90">
+                            <span className="font-serif font-bold text-base md:text-xl tracking-tight text-white/90">
                                 M. S. Salekin & Co
                             </span>
                         </div>
@@ -108,7 +108,7 @@ export const Navbar = () => {
                                         className="flex justify-between items-center py-4 cursor-pointer"
                                         onClick={() => item.children ? toggleDropdown(item.label) : null}
                                     >
-                                        <a href={item.href} className="text-2xl font-serif font-medium text-slate-300 hover:text-white transition-colors">
+                                        <a href={item.href} className="text-xl md:text-2xl font-serif font-medium text-slate-300 hover:text-white transition-colors">
                                             {item.label}
                                         </a>
                                         {item.children && (
@@ -122,8 +122,8 @@ export const Navbar = () => {
                                         <div className="pl-4 pb-4 flex flex-col gap-4 animate-fade-scale">
                                             {item.children.map((child) => (
                                                 <a key={child.label} href={child.href} className="flex items-center gap-3 text-slate-400 hover:text-white">
-                                                    <child.icon size={18} className="text-indigo-500" />
-                                                    <span className="text-lg">{child.label}</span>
+                                                    <child.icon size={16} className="text-indigo-500" />
+                                                    <span className="text-base">{child.label}</span>
                                                 </a>
                                             ))}
                                         </div>
@@ -132,12 +132,14 @@ export const Navbar = () => {
                             ))}
                         </div>
 
-                        <div className="mt-auto flex flex-col gap-4">
-                            <a href="#" className="flex items-center justify-center gap-2 p-4 rounded-xl bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 mb-4 active:bg-indigo-500/20 transition-colors">
-                                <ShieldCheck size={18} />
-                                <span className="font-bold text-sm">Secure Client Portal</span>
-                            </a>
-                            <Button variant="primary" className="w-full h-14 text-sm rounded-xl shadow-xl shadow-indigo-900/50">Book Strategic Call</Button>
+                        <div className="mt-auto flex flex-col gap-4 px-2">
+                            <Button variant="outline" className="w-full h-14 rounded-xl flex items-center justify-center gap-2 border-indigo-500/30 bg-indigo-500/5">
+                                <ShieldCheck size={18} className="text-indigo-400" />
+                                <span className="font-bold">Secure Client Portal</span>
+                            </Button>
+                            <Button variant="glow" className="w-full h-14 rounded-xl">
+                                Book Strategic Call
+                            </Button>
                         </div>
                     </div>
                 </div>

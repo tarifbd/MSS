@@ -23,11 +23,11 @@ export const FeatureHighlight = () => {
                         <div className="inline-block px-4 py-1 rounded-full bg-indigo-500/10 text-indigo-300 font-bold text-xs uppercase tracking-widest mb-8 border border-indigo-500/20">
                             Audit 2.0
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">
+                        <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif font-bold text-white mb-6 md:mb-8 leading-tight">
                             World-Class Compliance. <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">Local Expertise.</span>
                         </h2>
-                        <p className="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed font-light">
+                        <p className="text-base md:text-xl text-slate-400 mb-8 md:mb-10 leading-relaxed font-light">
                             Our workflow is designed for speed, accuracy, and absolute defensibility. We leverage tech-enabled audit tools to reduce turnaround time while increasing assurance levels.
                         </p>
 
@@ -66,13 +66,13 @@ export const FeatureHighlight = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <div className="glass-panel p-8 md:p-12 rounded-3xl border border-white/10 relative transform rotate-0 lg:rotate-2 transition-all hover:rotate-0 hover:scale-[1.02] bg-[#020617]/40 backdrop-blur-xl">
-                            <div className="flex justify-between items-center mb-10 border-b border-indigo-500/20 pb-8">
+                        <div className="glass-panel p-6 md:p-12 rounded-3xl border border-white/10 relative transform rotate-0 lg:rotate-2 transition-all hover:rotate-0 hover:scale-[1.02] bg-[#020617]/40 backdrop-blur-xl">
+                            <div className="flex justify-between items-center mb-8 md:mb-10 border-b border-indigo-500/20 pb-6 md:pb-8">
                                 <div>
-                                    <div className="text-xs text-slate-400 uppercase tracking-widest mb-2 font-bold">Entity Status</div>
-                                    <div className="text-2xl md:text-3xl font-bold text-white font-serif">Multinational Ltd.</div>
+                                    <div className="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest mb-2 font-bold">Entity Status</div>
+                                    <div className="text-xl md:text-3xl font-bold text-white font-serif">Multinational Ltd.</div>
                                 </div>
-                                <div className="px-4 py-1.5 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full uppercase border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                                <div className="px-3 md:px-4 py-1.5 bg-emerald-500/10 text-emerald-400 text-[10px] md:text-xs font-bold rounded-full uppercase border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
                                     Audit Ready
                                 </div>
                             </div>

@@ -8,7 +8,7 @@ import { useScrollReveal } from '../hooks';
 
 export const TheVanguard = () => {
     return (
-        <section className="py-24 md:py-40 bg-[#020617] relative overflow-hidden">
+        <section className="py-20 md:py-40 bg-[#020617] relative overflow-hidden">
             {/* Background Accents */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-500/10 blur-[120px] rounded-full" />
@@ -21,18 +21,18 @@ export const TheVanguard = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-center mb-20 md:mb-32"
+                    className="text-center mb-16 md:mb-32"
                 >
-                    <h2 className="text-5xl md:text-7xl font-serif font-bold text-white mb-8 tracking-tight">The Vanguard</h2>
-                    <div className="h-1.5 w-24 bg-indigo-500 mx-auto mb-8 rounded-full" />
-                    <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    <h2 className="text-3xl sm:text-5xl md:text-7xl font-serif font-bold text-white mb-6 md:mb-8 tracking-tight">The Vanguard</h2>
+                    <div className="h-1 w-16 md:h-1.5 md:w-24 bg-indigo-500 mx-auto mb-6 md:mb-8 rounded-full" />
+                    <p className="text-slate-400 text-base md:text-xl max-w-2xl mx-auto font-light leading-relaxed px-4">
                         Architects of financial clarity. Led by industry veterans with deep-rooted regulatory relationships.
                     </p>
                 </motion.div>
 
                 {/* Partners Grid */}
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-24 md:mb-40 px-4 md:px-0"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-24 md:mb-40 px-4 md:px-0"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
@@ -73,10 +73,10 @@ export const TheVanguard = () => {
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                <div className="absolute bottom-0 left-0 w-full p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div className="font-serif text-3xl font-bold text-white mb-2">{leader.name}</div>
-                                    <div className="text-indigo-400 text-sm font-semibold uppercase tracking-widest">{leader.role}</div>
-                                    <div className="h-0.5 w-0 group-hover:w-full bg-indigo-500 mt-4 transition-all duration-700 ease-out" />
+                                <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                    <div className="font-serif text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">{leader.name}</div>
+                                    <div className="text-indigo-400 text-[10px] md:text-sm font-semibold uppercase tracking-widest">{leader.role}</div>
+                                    <div className="h-0.5 w-0 group-hover:w-full bg-indigo-500 mt-3 md:mt-4 transition-all duration-700 ease-out" />
                                 </div>
                             </div>
                         </motion.div>
@@ -84,19 +84,19 @@ export const TheVanguard = () => {
                 </motion.div>
 
                 {/* Management Grid */}
-                <div className="border-t border-white/10 pt-24 md:pt-32">
+                <div className="border-t border-white/10 pt-20 md:pt-32">
                     <motion.div
-                        className="text-center mb-16 md:mb-24"
+                        className="text-center mb-12 md:mb-24"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Directors & Key Management</h3>
-                        <p className="text-slate-500 text-lg uppercase tracking-[0.2em] font-medium">The Backbone of Excellence</p>
+                        <h3 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4">Directors & Key Management</h3>
+                        <p className="text-slate-500 text-xs md:text-lg uppercase tracking-[0.2em] font-medium">The Backbone of Excellence</p>
                     </motion.div>
 
                     <motion.div
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
@@ -139,10 +139,10 @@ export const TheVanguard = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
 
                                     <div className="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                        <div className="font-serif text-2xl font-bold text-white mb-1">{m.name}</div>
-                                        <div className="text-indigo-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">{m.role}</div>
-                                        <p className="text-xs text-slate-400 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{m.spec}</p>
-                                        <div className="h-0.5 w-0 group-hover:w-full bg-indigo-500 mt-4 transition-all duration-700 ease-out" />
+                                        <div className="font-serif text-lg md:text-2xl font-bold text-white mb-1">{m.name}</div>
+                                        <div className="text-indigo-400 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] mb-2 md:mb-3">{m.role}</div>
+                                        <p className="text-[10px] md:text-xs text-slate-400 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{m.spec}</p>
+                                        <div className="h-0.5 w-0 group-hover:w-full bg-indigo-500 mt-3 md:mt-4 transition-all duration-700 ease-out" />
                                     </div>
                                 </div>
                             </motion.div>
