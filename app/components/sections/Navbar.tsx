@@ -49,9 +49,14 @@ export const Navbar = () => {
                                     <span className="text-white font-serif font-bold text-lg md:text-2xl">M</span>
                                 </div>
                             </div>
-                            <span className="font-serif font-bold text-base md:text-xl tracking-tight text-white/90">
-                                M. S. Salekin & Co
-                            </span>
+                            <div className="flex flex-col leading-tight">
+                                <span className="font-serif font-bold text-base md:text-xl tracking-tight text-white/90">
+                                    M. S. Salekin & Co
+                                </span>
+                                <span className="text-[8px] md:text-[10px] font-medium text-indigo-400/80 uppercase tracking-widest">
+                                    Chartered Accountants
+                                </span>
+                            </div>
                         </div>
 
                         <nav className="hidden lg:flex items-center gap-8">
