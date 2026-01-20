@@ -5,7 +5,7 @@ import { useMousePosition } from './hooks';
 import { Navbar } from './sections/Navbar';
 import { HeroCinematic } from './sections/HeroCinematic';
 import { ServicesCommandCenter } from './sections/ServicesCommandCenter';
-import { ImpactStories } from './sections/ImpactStories';
+import { ComplianceEcosystem } from './sections/ComplianceEcosystem';
 import { InnovationHub } from './sections/InnovationHub';
 import { SectorMatrix } from './sections/SectorMatrix';
 import { GlobalNetwork } from './sections/GlobalNetwork';
@@ -29,7 +29,7 @@ export default function DigitalInstitution() {
             <main className="overflow-x-hidden">
                 <HeroCinematic />
                 <ServicesCommandCenter />
-                <ImpactStories />
+                <ComplianceEcosystem />
                 <InnovationHub />
                 <SectorMatrix />
                 <GlobalNetwork />
