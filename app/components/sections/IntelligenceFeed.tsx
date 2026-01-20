@@ -4,7 +4,6 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Container, SpotlightCard } from '../ui/atoms';
 import { motion } from 'framer-motion';
-import { useScrollReveal } from '../hooks';
 
 export const IntelligenceFeed = () => {
     return (

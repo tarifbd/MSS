@@ -4,7 +4,6 @@ import React from 'react';
 import { Check, Activity } from 'lucide-react';
 import { Container, Button } from '../ui/atoms';
 import { motion } from 'framer-motion';
-import { useScrollReveal } from '../hooks';
 
 export const FeatureHighlight = () => {
     return (

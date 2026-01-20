@@ -4,10 +4,7 @@ import React from 'react';
 import { ArrowRight, Quote } from 'lucide-react';
 import { Container } from '../ui/atoms';
 import { motion } from 'framer-motion';
-import { useScrollReveal } from '../hooks';
-
 export const ImpactStories = () => {
-    const [ref, isVisible] = useScrollReveal(0.1);
     const cases = [
         {
             client: "Multinational Textile Conglomerate",

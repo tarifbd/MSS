@@ -4,7 +4,6 @@ import React from 'react';
 import { Landmark, Cpu, Zap, Network, ArrowRight } from 'lucide-react';
 import { Container, SpotlightCard } from '../ui/atoms';
 import { motion } from 'framer-motion';
-import { useScrollReveal } from '../hooks';
 
 export const SectorMatrix = () => {
     const sectors = [
@@ -36,7 +35,6 @@ export const SectorMatrix = () => {
             }
         }
     };
-    const [ref, isVisible] = useScrollReveal(0.1);
     return (
         <section className="py-24 bg-[#020617] border-t border-white/5 relative">
             <Container>
