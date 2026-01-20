@@ -4,7 +4,6 @@ import React from 'react';
 import { Leaf } from 'lucide-react';
 import { Container } from '../ui/atoms';
 import { motion } from 'framer-motion';
-import { useScrollReveal } from '../hooks';
 
 export const ESGCommitment = () => {
     return (

@@ -4,7 +4,6 @@ import React from 'react';
 import { Code, Server, Layers, Activity, Smartphone } from 'lucide-react';
 import { Container } from '../ui/atoms';
 import { motion } from 'framer-motion';
-import { useScrollReveal } from '../hooks';
 
 export const InnovationHub = () => {
     return (
