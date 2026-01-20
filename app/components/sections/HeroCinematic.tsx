@@ -87,7 +87,7 @@ export const HeroCinematic = () => {
                         variants={itemVariants}
                         className="text-sm md:text-xl text-slate-400 w-full max-w-[90vw] md:max-w-2xl mb-10 md:mb-12 leading-relaxed font-light tracking-wide px-2 md:px-0"
                     >
-                        We merge Big-4 rigor with modern agility. Transform your compliance from a burden into a strategic growth engine.
+                        We merge institutional rigor with modern agility. Transform your compliance from a burden into a strategic growth engine.
                     </motion.p>
 
                     <motion.div
