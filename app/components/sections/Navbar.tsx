@@ -31,8 +31,23 @@ export const Navbar = () => {
                 <Container>
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 md:gap-3">
-                            <div className="w-7 h-7 md:w-10 md:h-10 bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center rounded-lg shadow-lg shadow-indigo-500/30">
-                                <span className="text-white font-serif font-bold text-lg md:text-2xl">M</span>
+                            {/* Logo - Replace src with your actual logo path */}
+                            <div className="relative w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+                                <img
+                                    src="/images/logo.png"
+                                    alt="M. S. Salekin & Co Logo"
+                                    className="w-full h-full object-cover rounded-full border-2 border-white/10"
+                                    onError={(e) => {
+                                        // Fallback to gradient if image not found
+                                        e.currentTarget.style.display = 'none';
+                                        const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                                        if (fallback) fallback.style.display = 'flex';
+                                    }}
+                                />
+                                {/* Fallback gradient icon */}
+                                <div className="hidden w-full h-full bg-gradient-to-br from-indigo-500 to-violet-600 items-center justify-center rounded-full shadow-lg shadow-indigo-500/30 absolute inset-0">
+                                    <span className="text-white font-serif font-bold text-lg md:text-2xl">M</span>
+                                </div>
                             </div>
                             <span className="font-serif font-bold text-base md:text-xl tracking-tight text-white/90">
                                 M. S. Salekin & Co
